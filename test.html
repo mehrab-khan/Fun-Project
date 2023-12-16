@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Move Button</title>
+  <style>
+    #movingButton {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+<button id="movingButton" onclick="moveButton()">Click me to move</button>
+
+<script>
+function moveButton() {
+  var button = document.getElementById('movingButton');
+
+  // Generate new random values for marginTop and marginLeft
+  var newMarginTop = Math.floor(Math.random() * window.innerHeight);
+  var newMarginLeft = Math.floor(Math.random() * window.innerWidth);
+
+  // Apply new values to the button's style
+  button.style.marginTop = newMarginTop + 'px';
+  button.style.marginLeft = newMarginLeft + 'px';
+}
+</script>
+
+</body>
+</html>
