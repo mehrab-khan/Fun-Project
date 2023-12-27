@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=IBM+Plex+Sans:wght@300&family=Noto+Sans:wght@200&family=Titillium+Web:wght@300&family=Whisper&display=swap" rel="stylesheet">
+     
     <style>
-        input{
+        body{
+            background-color: rgb(122, 213, 255)
+        }
+             .info{
+            background-color: rgb(248, 248, 248);
             position: absolute;
-            margin: auto;
+            width: 600px;
+            height: 130px;
+            top: 0;
+            border-radius: 5px;
+            bottom: 0;
             left: 0;
             right: 0;
-            top: 10%;
+            margin: auto;
+        }
+        h3{
+            font-size: 21px;
+            margin-top: 2%;
+            font-family: 'Noto Sans', sans-serif;
+            text-align: center;
+        }
+           input{
+            position: absolute;
+            margin: auto;
+            left: -134px;
+            right: 0;
+            top: 43%;
             height: 43px;
             width: 288px;
             padding-left: 4%;
@@ -18,7 +41,7 @@
             font-size: 18px;
             border: none;
             background-color: rgb(228, 226, 226);
-            border-radius: 10px;
+            border-radius: 20px;
             outline: none;
         }
         input:hover{
@@ -35,16 +58,19 @@
             font-size: 17px;    
         border-radius:30px ;   
          margin: auto;
-         left: 0;
+         left: 350px;
          right: 0;
-         top: 22%;
+         top: 60px;
     }
     </style>
 </head>
 <body>
+    <div class="info">
+        <h3>Enter Your Name : </h3>
     <input type="text" id="name" placeholder="Enter Your Name">
      
     <button id="btn" onclick="data()">Submit</button>
+</div>
 </body>
 <script>
     let name = document.querySelector('#name');

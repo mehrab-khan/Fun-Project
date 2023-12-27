@@ -9,25 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Nunito:wght@600&family=Raleway:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Nunito:wght@600&family=Raleway:wght@200&family=Whisper&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+     
     <style>
+
+
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Titillium+Web:wght@300&display=swap');
         body{
             padding: 0;
             margin: 0;
+            background-color:  #52a6f5 ;
         }
-        .container{
-            position: relative;
-            height: 204px;
-            width: 360px;
-            margin: auto;
-            top: 190px;
-            left: 0;
-            right: 0;
-            bottom: 0;  
-        }
+         
+        
         h1{
             text-align: center;
             font-family: 'Lora', serif;
+            position: absolute;
+             
+            left: 0;
+            color: white;
+            right: 0;
+            margin: 5%;
+            top: 245px;
+            bottom: 0;
         }
         button{
             height: 42px;
@@ -35,85 +39,102 @@
             font-family: 'Titillium Web', sans-serif;
             color: rgb(255, 255, 255);
             font-size: 20px;
-            
+            position: absolute;
             font-weight: bold;
             background-color: rgb(0, 140, 255);
             border: none;
             border-radius: 20px;
         }
-        #yes{
-            position: absolute;
-            left: 50px;
-            top: 80px;
-        }
-        #no{
-            position: absolute;
-            left: 210px;
-            top: 80px;
-        }
+     
         img{
             position: absolute;
-            width: 175px;
-            height: 177px;
-            top: 10px;
-            margin-top: -4%;
-        }
-        .emotion{
-            position: absolute;
-            background-color: rgb(255, 255, 255);
-            height: 170px;
+            width: 424px;
+            height: 424px;
+            
             margin: auto;
+            top: 0;
+            right: 0;
+            left: -16%;
+            bottom: 74%;
+        }
+       
+        #yes{
+            margin: 2%;
+        }
+        #no{
+            margin: 2%;
+            margin-left: 56%;
+            transition: 1s;
+        }
+        .container-sm{
+            position: absolute;
+            margin: auto;
+            top: 68%;
+            right: 0;
+            left: 0;
+            bottom: 0;
              
+            height: 101px;
+            width: 223px;
+        }
+        .container{
+            height: 302px;
+            width: 338px;
+            margin: auto;
+            
+            position: absolute;
             left: 0;
             right: 0;
-            width: 177px;
+            top: 0;
+            bottom: 0;
         }
-        #sad{
-            width: 175px;
-            position: absolute;
-            height: 177px;
-            top: 10px;
-            margin-top: -4%;  
-        }
-        .move{
-            margin-top: 20%;
-            margin-left: 5%;
-        }
+   
+     
     </style>
 </head>
 <body>
-    <div class="emotion">
-        <img src="./giphy (1).gif" id="happy" alt="">
-    </div>
-    <div class="container">
+    
+     <div class="container">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" id="happy" alt="">
+    
+    
     <h1 id="txt">Do You Love Me ?</h1>
-    <button id="yes">Yes</button>
-    <button id="no">No</button>
 </div>
+    <div class="container-sm">
+        <button id="yes">Yes</button>
+    <button id="no" onmouseover="moveButton()">No</button>
+</div>
+ 
 <script>
-   
+    
+    let containerSm = document.querySelector('.container-sm')
+    let container = document.querySelector('.container')
+   let body = document.querySelector('body')
 let txt = document.querySelector('#txt')
     let no = document.querySelector('#no');
     let yes = document.querySelector('#yes');
     let emotion = document.querySelector('.emotion');
-    var newMarginTop = Math.floor(Math.random() * 170);
-  var newMarginLeft = Math.floor(Math.random() * 177);
+ var  ex = document.querySelector('.container-sm')
 
-    no.addEventListener('click',()=>{
-        emotion.innerHTML = ''
-        emotion.innerHTML = '<img src="./giphy.gif" id="sad" alt=""> '
-        txt.textContent = "It doestn't matter you love me or not i love you"
-        txt.style.fontSize = '22px'
-        
-    })
+    
     yes.addEventListener('click',()=>{
-        emotion.innerHTML = ''
-        emotion.innerHTML = '<img src="./giphy (1).gif" id="happy" alt="">'
-        txt.textContent = 'Thank You Dear'
-
+        containerSm.innerHTML = ''
+         
+        container.innerHTML = ` <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration"> <h1 id="txt">Thank You Dear</h1>`
+         
+         
         setTimeout((e)=>{
             window.location.href = './wish.html'
         },2000)
     })
+
+    function moveButton() {
+                        var x = Math.random() * 750;
+                        var y = Math.random() * 200;
+                         
+                        no.style.left = `-${x}px`;
+                        no.style.top = `-${y}px`;
+                        
+                    }
 </script>
 </html>
