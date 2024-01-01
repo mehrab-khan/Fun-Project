@@ -129,8 +129,8 @@ let txt = document.querySelector('#txt')
     })
 
     function moveButton() {
-                        var x = Math.random() * 750;
-                        var y = Math.random() * 200;
+                        var x = Math.floor(Math.random() * (550 - 100 + 1)) + 250;
+                        var y = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
                          
                         no.style.left = `-${x}px`;
                         no.style.top = `-${y}px`;
